@@ -18,7 +18,7 @@ description: 'Record customer events in Lime Journey'
   Additional properties for the event
 </ParamField>
 
-<RequestExample>
+<CodeGroup>
 ```bash cURL
 curl -X POST https://api.limejourney.com/events \
   -H "Authorization: Bearer YOUR_API_KEY" \
@@ -32,9 +32,9 @@ curl -X POST https://api.limejourney.com/events \
     }
   }'
 ```
-</RequestExample>
-
-<ResponseExample>
+</CodeGroup>
+## Example Response
+<CodeGroup>
 ```json Response
 {
   "status": "success",
@@ -50,4 +50,4 @@ curl -X POST https://api.limejourney.com/events \
   }
 }
 ```
-</ResponseExample>
+</CodeGroup>
