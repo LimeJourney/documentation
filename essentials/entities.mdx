@@ -1,0 +1,48 @@
+---
+title: 'Entities'
+description: 'Managing customer profiles in Lime Journey'
+---
+Entities represent your customers or users in Lime Journey. Each entity can have custom properties, associated events, and segment memberships.
+
+## Properties
+
+Entities can have any number of custom properties:
+
+```typescript
+{
+  "external_id": "customer123",
+  "properties": {
+    "plan_type": "basic",
+    "team_size": 5,
+    "signup_date": "2024-01-15"
+  }
+}
+```
+
+## Creating Entities
+
+<CodeGroup>
+
+```typescript SDK
+await client.createEntity({
+  externalId: 'customer123',
+  properties: {
+    plan_type: 'basic',
+    team_size: 5
+  }
+});
+```
+
+```bash HTTP
+curl -X POST https://api.limejourney.com/entities \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "external_id": "customer123",
+    "properties": {
+      "plan_type": "basic",
+      "team_size": 5
+    }
+  }'
+```
+</CodeGroup>
