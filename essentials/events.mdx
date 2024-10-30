@@ -1,0 +1,53 @@
+---
+title: 'Events API'
+api: 'POST /events'
+description: 'Record customer events in Lime Journey'
+---
+
+## Record Event
+
+<ParamField body="entity_external_id" type="string" required>
+  The external ID of the entity
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  Name of the event
+</ParamField>
+
+<ParamField body="properties" type="object">
+  Additional properties for the event
+</ParamField>
+
+<RequestExample>
+```bash cURL
+curl -X POST https://api.limejourney.com/events \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "entity_external_id": "customer123",
+    "name": "purchase",
+    "properties": {
+      "amount": 99.99,
+      "product": "premium"
+    }
+  }'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "status": "success",
+  "data": {
+    "id": "evt_123",
+    "entity_external_id": "customer123",
+    "name": "purchase",
+    "properties": {
+      "amount": 99.99,
+      "product": "premium"
+    },
+    "timestamp": "2024-01-15T12:00:00Z"
+  }
+}
+```
+</ResponseExample>
